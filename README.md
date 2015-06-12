@@ -1,6 +1,6 @@
 # HELLO, WORLD!
 
-This is a tiny GO program that...
+This is a tiny GO program (and Docker image) that...
 
 1. Waits for a data on a set port (the only argument)
 2. Looks for a `\r\n\r\n` sequence (indicating end of an HTTP packet) 
@@ -18,6 +18,21 @@ Hello, World!
 You'd be surprised the amount of time you can save with this when setting disparate parts
 of your application services!
 
+# USAGE
+
+```sh
+$ docker pull chakrit/hello
+$ docker run -p 8080:8080 chakrit/hello
+```
+
+Or create a named container:
+
+```sh
+$ docker pull chakrit/hello
+$ docker create --name hello -p 8080:8080 chakrit/hello
+$ docker start hello
+```
+
 # WHAT's THE USE?
 
 * Testing NGINX upstream configuration.
@@ -29,4 +44,9 @@ of your application services!
 # LICENSE
 
 BSD
+
+# TODO
+
+* Persistent connection.
+* Container w/o any Go stuff.
 
