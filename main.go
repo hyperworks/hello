@@ -16,7 +16,6 @@ func main() {
 	if len(os.Args) > 1 {
 		text = strings.Join(os.Args[1:], " ")
 	}
-	textBuf = []byte(text)
 
 	listener, e := net.Listen("tcp", LISTEN_ADDR)
 	noError("listen", e)
