@@ -2,9 +2,9 @@
 
 This is a tiny GO program (and Docker image) that...
 
-1. Waits for a data on a set port (the only argument)
+1. Waits for a data on port 8080
 2. Looks for a `\r\n\r\n` sequence (indicating end of an HTTP packet) 
-3. Spits out the "Hello, World!" HTTP response...
+3. Spits out the "Hello, World!" (or program's arguments as text) HTTP response...
 4. ... and immediately close the conneciton.
 
 ```http

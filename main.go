@@ -5,19 +5,20 @@ import (
 	"net"
 	"os"
 	"strconv"
+	"strings"
 )
 
-func main() {
-	port := 8080
-	if len(os.Args) > 1 {
-		if p, e := strconv.Atoi(os.Args[1]); e != nil {
-			panic(e)
-		} else {
-			port = p
-		}
-	}
+const LISTEN_ADDR = ":8080"
+const DEFAULT_TEXT = "Hello, World!"
 
-	listener, e := net.Listen("tcp", ":"+strconv.Itoa(port))
+func main() {
+	text := DEFAULT_TEXT
+	if len(os.Args) > 1 {
+		text = strings.Join(os.Args[1:], " ")
+	}
+	textBuf = []byte(text)
+
+	listener, e := net.Listen("tcp", LISTEN_ADDR)
 	noError("listen", e)
 	defer func() { noError("server close", listener.Close()) }()
 
@@ -25,9 +26,9 @@ func main() {
 	output := []byte(
 		"HTTP/1.1 200 OK\r\n" +
 			"Content-Type: text/plain\r\n" +
-			"Content-Length: 13\r\n" +
+			"Content-Length: " + strconv.Itoa(len(text)) + "\r\n" +
 			"\r\n" +
-			"Hello, World!\r\n")
+			text + "\r\n")
 
 	for {
 		conn, e := listener.Accept()
