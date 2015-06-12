@@ -10,6 +10,7 @@ This is a tiny GO program (and Docker image) that...
 ```http
 HTTP/1.1 200 OK
 Content-Type: text/plain
+Connection: close
 Content-Length: 13
 
 Hello, World!

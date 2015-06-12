@@ -25,9 +25,10 @@ func main() {
 	output := []byte(
 		"HTTP/1.1 200 OK\r\n" +
 			"Content-Type: text/plain\r\n" +
+			"Connection: close\r\n" +
 			"Content-Length: " + strconv.Itoa(len(text)) + "\r\n" +
 			"\r\n" +
-			text + "\r\n")
+			text)
 
 	for {
 		conn, e := listener.Accept()
