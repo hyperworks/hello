@@ -39,7 +39,7 @@ Or, even better, create TEN hello world services!
 $ docker pull chakrit/hello
 $ for i in {0..9}
   do
-    docker create --name hello$i -p 808$i:8080 chakrit/hello
+    docker create --name hello$i -p 808$i:8080 chakrit/hello Hello from node $i
     docker start hello$i
   done
 ```
