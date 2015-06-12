@@ -33,6 +33,17 @@ $ docker create --name hello -p 8080:8080 chakrit/hello
 $ docker start hello
 ```
 
+Or, even better, create TEN hello world services!
+
+```sh
+$ docker pull chakrit/hello
+$ for i in {0..9}
+  do
+    docker create --name hello$i -p 808$i:8080 chakrit/hello
+    docker start hello$i
+  done
+```
+
 # WHAT's THE USE?
 
 * Testing NGINX upstream configuration.
