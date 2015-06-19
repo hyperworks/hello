@@ -22,25 +22,25 @@ of your application services!
 # USAGE
 
 ```sh
-$ docker pull chakrit/hello
-$ docker run -p 8080:8080 chakrit/hello
+$ docker pull hyperworks/hello
+$ docker run -p 8080:8080 hyperworks/hello
 ```
 
 Or create a named container:
 
 ```sh
-$ docker pull chakrit/hello
-$ docker create --name hello -p 8080:8080 chakrit/hello
+$ docker pull hyperworks/hello
+$ docker create --name hello -p 8080:8080 hyperworks/hello
 $ docker start hello
 ```
 
 Or, even better, create TEN hello world services!
 
 ```sh
-$ docker pull chakrit/hello
+$ docker pull hyperworks/hello
 $ for i in {0..9}
   do
-    docker create --name hello$i -p 808$i:8080 chakrit/hello Hello from node $i
+    docker create --name hello$i -p 808$i:8080 hyperworks/hello Hello from node $i
     docker start hello$i
   done
 ```
