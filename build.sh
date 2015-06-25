@@ -1,6 +1,6 @@
 #!/bin/sh
 
-IMAGE_NAME=hello
+IMAGE_NAME=hyperworks/hello
 if [ "$1" != "" ]; then
   IMAGE_NAME="$1"
 fi

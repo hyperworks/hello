@@ -1,6 +1,6 @@
 # HELLO, WORLD!
 
-This is a tiny GO program (and Docker image) that...
+This is a tiny GO program (and 2MB Docker image) that...
 
 1. Waits for a data on port 8080
 2. Looks for a `\r\n\r\n` sequence (indicating end of an HTTP packet) 
