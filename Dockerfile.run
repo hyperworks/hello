@@ -1,6 +1,0 @@
-# vim: filetype: dockerfile
-FROM scratch
-WORKDIR /
-ADD main /
-EXPOSE 8080
-ENTRYPOINT ["/main"]

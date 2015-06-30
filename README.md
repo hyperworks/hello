@@ -1,6 +1,6 @@
 # HELLO, WORLD!
 
-This is a tiny GO program (and 2MB Docker image) that...
+This is a tiny GO program (and 3MB Docker image) that...
 
 1. Waits for a data on port 8080
 2. Looks for a `\r\n\r\n` sequence (indicating end of an HTTP packet) 
@@ -52,6 +52,11 @@ $ for i in {0..9}
 * Testing API gateways.
 * Load-testing a middleware.
 * Misc testing uses when setting up microservices.
+
+# BUILD
+
+Runs the `./build.sh` script to produce a working binary, then run your usual `docker
+build` command which 
 
 # LICENSE
 

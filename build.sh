@@ -1,12 +1,6 @@
 #!/bin/sh
 
-IMAGE_NAME=hyperworks/hello
-if [ "$1" != "" ]; then
-  IMAGE_NAME="$1"
-fi
-
-docker build -t hellobuild .
-docker run -v /var/run/docker.sock:/var/run/docker.sock -it --rm \
-  -e IMAGE_NAME=$IMAGE_NAME \
-  hellobuild
+docker run --rm -v "$PWD":/go/src/hello -w /go/src/hello \
+  -e CGO_ENABLED=0 -e GOOS=linux golang:1.4 \
+  go build -v -a -installsuffix cgo -o hello .
 
